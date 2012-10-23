@@ -12,5 +12,5 @@ xr_version=`curl -s \
 
 rm -rf XUL.framework
 echo "Fetching $xr_root$xr_version/runtimes/xulrunner-$xr_version.en-US.mac.tar.bz2"
-curl -s "$xr_root$xr_version/runtimes/xulrunner-$xr_version.en-US.mac.tar.bz2" \
+curl "$xr_root$xr_version/runtimes/xulrunner-$xr_version.en-US.mac.tar.bz2" \
     | tar xj

@@ -16,7 +16,9 @@ $(STAGE):
 
 %/MacOS:
 	mkdir -p $@
-	cp -rp $(FIREFOX)/Contents/MacOS/* $@
+	./get_xulrunner.sh
+	cp -rp XUL.framework/Versions/Current/* $@
+	mv $@/xulrunner $@/xulrunner-orig
 
 %/Resources:
 	mkdir -p $@
@@ -61,6 +63,8 @@ install: $(CONKEROR)
 .PHONY: clean distclean
 clean:
 	rm -rf ./$(CONKEROR)
+	rm -rf ./XUL.framework
+	rm -rf ./conkeror.git
 
 distclean: clean
 	rm -rf ./$(STAGE)

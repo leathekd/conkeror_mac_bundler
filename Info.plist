@@ -60,6 +60,10 @@
     </array>
 
     <key>CFBundleInfoDictionaryVersion</key>
-    <string>6.0</string> <!-- I have no good reference as to why this is 6.0 -->
+    <string>6.0</string> <!-- I have no good reference as to why this
+    is 6.0 -->
+
+    <key>NSHighResolutionCapable</key>
+    <string>True</string>
   </dict>
 </plist>

@@ -48,15 +48,15 @@ $(STAGE):
 $(CONKEROR): \
  $(CONKEROR)/Contents/MacOS \
  $(CONKEROR)/Contents/MacOS/xulrunner \
- $(CONKEROR)/Contents/MacOS/conkeror-spawn-helper \
  $(CONKEROR)/Contents/MacOS/conkeror \
+ $(CONKEROR)/Contents/MacOS/conkeror/conkeror-spawn-helper \
  $(CONKEROR)/Contents/Resources \
  $(CONKEROR)/Contents/Info.plist
 	@echo "built $(CONKEROR)"
 
 .PHONY: install
 install: $(CONKEROR)
-	@mv /Applications/$(CONKEROR) $(CONKEROR).backup
+	@mv /Applications/$(CONKEROR) $(CONKEROR).backup || true
 	mv $(CONKEROR) /Applications
 	@rm -rf $(CONKEROR).backup
 
